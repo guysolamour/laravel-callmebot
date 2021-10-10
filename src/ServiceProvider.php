@@ -2,12 +2,12 @@
 
 namespace Guysolamour\Callmebot;
 
-use Guysolamour\Callmebot\Channels\WhatsappChannel;
-use Guysolamour\Callmebot\Channels\FacebookChannel;
-use Guysolamour\Callmebot\Clients\Whatsapp;
 use Guysolamour\Callmebot\Clients\Facebook;
+use Guysolamour\Callmebot\Clients\Whatsapp;
 use Illuminate\Notifications\ChannelManager;
 use Illuminate\Support\Facades\Notification;
+use Guysolamour\Callmebot\Channels\FacebookChannel;
+use Guysolamour\Callmebot\Channels\WhatsappChannel;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {

@@ -14,7 +14,7 @@ abstract class BaseClient
     protected string $message = '';
 
 
-    public function apikey(string $apikey): self
+    public function apikey(?string $apikey): self
     {
         $this->apikey = $apikey;
 
@@ -32,7 +32,8 @@ abstract class BaseClient
     abstract public function send(array $data = []);
 
 
-    protected function BuildUrl(string $url = ''): string {
+    protected function BuildUrl(string $url = ''): string
+    {
         $url = Str::start($url, '/');
 
         return self::BASE_URL . $url;

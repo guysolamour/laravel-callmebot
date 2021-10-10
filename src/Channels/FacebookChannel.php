@@ -37,5 +37,4 @@ class FacebookChannel extends BaseChannel
 
         Facebook::apikey($notifiable->callmebotApiKeys('facebook'))->message($message)->send();
     }
-
 }

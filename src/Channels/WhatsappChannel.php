@@ -2,6 +2,7 @@
 
 namespace Guysolamour\Callmebot\Channels;
 
+use Illuminate\Support\Str;
 use Illuminate\Notifications\Notification;
 use Guysolamour\Callmebot\Facades\Whatsapp;
 
@@ -13,7 +14,7 @@ class WhatsappChannel extends BaseChannel
      *
      * @return string
      */
-    protected function channel() :string
+    protected function channel(): string
     {
         return 'whatsapp';
     }
@@ -37,11 +38,16 @@ class WhatsappChannel extends BaseChannel
 
         $message = $this->getNotificationMessage($notifiable, $notification);
 
-        if (!$message){
+        if (!$message) {
             return;
         }
 
-        Whatsapp::apikey($notifiable->callmebotApiKeys($this->channel()))->phone($notifiable->routeNotificationForCbWHatsapp())->message($message)->send();
-    }
+        $apikey = $notifiable->callmebotApiKeys($this->channel());
 
+        if (!$apikey) {
+            return;
+        }
+
+        Whatsapp::apikey($apikey)->phone($notifiable->routeNotificationForCbWHatsapp())->message($message)->send();
+    }
 }

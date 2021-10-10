@@ -9,15 +9,15 @@ use Illuminate\Notifications\Notification;
 abstract class BaseChannel
 {
 
-    abstract protected function channel() :string;
+    abstract protected function channel(): string;
 
 
-    protected function getNotificationMethod() :string
+    protected function getNotificationMethod(): string
     {
         return Str::ucfirst('toCb' . $this->channel());
     }
 
-    protected function getNotificationMessage($notifiable, Notification $notification) :?string
+    protected function getNotificationMessage($notifiable, Notification $notification): ?string
     {
         $method_name = $this->getNotificationMethod();
 
@@ -36,11 +36,11 @@ abstract class BaseChannel
         if (
             method_exists($notifiable, 'enableCallmebotNotification') &&
             $notifiable->enableCallmebotNotification() === false
-            ){
-            return ;
+        ) {
+            return;
         }
 
-        if (!method_exists($notification, $this->getNotificationMethod())){
+        if (!method_exists($notification, $this->getNotificationMethod())) {
             return;
         }
 
@@ -49,11 +49,5 @@ abstract class BaseChannel
             method_exists($notifiable, 'callmebotApiKeys'),
             sprintf("The [%s] notifiable class must implement [callmebotApiKeys] method.", get_class($notifiable))
         );
-
-        throw_unless(
-            $notifiable->callmebotApiKeys(Str::lower($this->channel())),
-            sprintf("The [%s] notifiable %s api key is not valid.",  get_class($notifiable), $this->channel())
-        );
     }
-
 }
