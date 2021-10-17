@@ -1,8 +1,5 @@
 # Laravel Callmebot
 
-[![GitHub Workflow Status](https://github.com/guysolamour/laravel-callmebot/workflows/Run%20tests/badge.svg)](https://github.com/guysolamour/laravel-callmebot/actions)
-[![styleci](https://styleci.io/repos/CHANGEME/shield)](https://styleci.io/repos/CHANGEME)
-
 [![Packagist](https://img.shields.io/packagist/v/guysolamour/laravel-callmebot.svg)](https://packagist.org/packages/guysolamour/laravel-callmebot)
 [![Packagist](https://poser.pugx.org/guysolamour/laravel-callmebot/d/total.svg)](https://packagist.org/packages/guysolamour/laravel-callmebot)
 [![Packagist](https://img.shields.io/packagist/l/guysolamour/laravel-callmebot.svg)](https://packagist.org/packages/guysolamour/laravel-callmebot)
@@ -66,7 +63,7 @@ public function enableCallmebotNotification() :bool
     return true;
 }
 
-public function routeNotificationForCbWHatsapp() :int
+public function routeNotificationForCbWHatsapp()
 {
     return 0102030405;
 }

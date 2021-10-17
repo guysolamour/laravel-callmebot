@@ -38,6 +38,9 @@ class Whatsapp extends BaseClient
             throw new WhatsappException('The message can not be empty');
         }
 
-        Http::get($this->buildUrl("whatsapp.php"), $data);
+        try {
+            Http::get($this->buildUrl("whatsapp.php"), $data);
+        } catch (\Exception $e) {
+        }
     }
 }

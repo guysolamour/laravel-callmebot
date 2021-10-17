@@ -21,7 +21,6 @@ abstract class BaseClient
         return $this;
     }
 
-
     public function message(string $message): self
     {
         $this->message = $message;
@@ -30,7 +29,6 @@ abstract class BaseClient
     }
 
     abstract public function send(array $data = []);
-
 
     protected function BuildUrl(string $url = ''): string
     {

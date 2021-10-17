@@ -23,6 +23,10 @@ class Facebook extends BaseClient
             throw new FacebookException('The message can not be empty');
         }
 
-        Http::get($this->buildUrl("facebook/send.php"), $data);
+        try {
+            Http::get($this->buildUrl("facebook/send.php"), $data);
+        } catch (\Throwable $th) {
+        }
+
     }
 }
