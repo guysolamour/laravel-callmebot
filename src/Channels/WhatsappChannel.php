@@ -2,7 +2,6 @@
 
 namespace Guysolamour\Callmebot\Channels;
 
-use Illuminate\Support\Str;
 use Illuminate\Notifications\Notification;
 use Guysolamour\Callmebot\Facades\Whatsapp;
 

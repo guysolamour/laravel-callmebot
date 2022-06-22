@@ -18,14 +18,14 @@ composer require guysolamour/laravel-callmebot
 
 #### Send message
 ```php
-Guysolamour\Callmebot\Clients\Whatsapp::apikey($apikey)->phone($phone)->message($message)->send();
+Guysolamour\Callmebot\Facades\Whatsapp::apikey($apikey)->phone($phone)->message($message)->send();
 
 // or
 
-Guysolamour\Callmebot\Clients\Whatsapp::send([
+Guysolamour\Callmebot\Facades\Whatsapp::send([
   'apikey'   => $apikey,
   'phone'    => $phone,
-  'message'  => $message,
+  'text'     => $message,
 ]);
 
 ```
