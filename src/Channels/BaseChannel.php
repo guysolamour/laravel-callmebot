@@ -19,9 +19,9 @@ abstract class BaseChannel
 
     protected function getNotificationMessage($notifiable, Notification $notification): ?string
     {
-        $method_name = $this->getNotificationMethod();
+        $methodName = $this->getNotificationMethod();
 
-        return $notification->$method_name($notifiable);
+        return $notification->$methodName($notifiable);
     }
 
     /**

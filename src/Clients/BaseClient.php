@@ -30,7 +30,7 @@ abstract class BaseClient
 
     abstract public function send(array $data = []);
 
-    protected function BuildUrl(string $url = ''): string
+    protected function buildUrl(string $url = ''): string
     {
         $url = Str::start($url, '/');
 
